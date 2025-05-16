@@ -1,0 +1,65 @@
+#:kivy 2.3.1
+
+<LoginScreen>:
+    username: username
+    password: password
+    error: error
+
+    AnchorLayout:
+        anchor_x: 'center'
+        anchor_y: 'center'
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            size_hint: None, None
+            width: 600
+            height: 300
+
+            GridLayout:
+                cols: 1
+                spacing: 20
+
+                Label:
+                    id: error
+                    text: ""
+
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 15
+
+                    Label:
+                        text: "User name"
+                        size_hint_x: None
+
+                    TextInput:
+                        id: username
+                        size_hint: 1, None
+                        height: 50
+                        hint_text: "Entrer votre nom"
+                        valigh: 'middle'
+                
+                BoxLayout:
+                    orientation: 'vertical'
+                    spacing: 15
+
+                    Label:
+                        text: "Password"
+                        size_hint_x: None
+
+                    TextInput:
+                        id: password
+                        password: True
+                        hint_text: "Taper un mot de passe"
+                        size_hint: 1, None
+                        height: 50
+                        valigh: 'middle'
+
+            Button:
+                id: valid
+                text: "Valider"
+                size_hint: None, None
+                width: 250
+                height: 50
+                pos_hint: {"center_x": 0.5}
+                on_press: root.formValidate()
