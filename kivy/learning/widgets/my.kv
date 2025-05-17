@@ -1,0 +1,35 @@
+#:kivy 2.3.1
+
+<MyBg>:
+    GridLayout:
+        canvas.before:
+            AnsyImage:
+                source: "dash.jpg"
+            
+            Rectangle:  
+                pos: self.pos
+                size: self.size
+
+<MyWidget>:
+    GridLayout:
+        size_hint: .9, .9
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        rows: 1
+
+        Label:
+            text: "I don't suffer from insanity"
+            text_size: self.width - 20, self.height - 20
+            valign: 'top'
+
+        Label:
+            text: "When I was born I was so suprised"
+            text_size: self.width - 20, self.width - 20
+            valign: "middle"
+            halign: "center"
+        
+        Label:
+            text: " A consultant is someone who takes a subjects you understand"
+            text_size: self.width - 20, self.height - 20
+            halign: "justify"
+            valign: "bottom"
+
