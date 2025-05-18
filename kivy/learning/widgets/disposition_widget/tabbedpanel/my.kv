@@ -1,0 +1,21 @@
+#:kivy 2.3.1
+
+<PannelWidget>:
+    orientation: "tb-lr"
+
+    TabbedPanel:
+        size_hint: .5, .5
+        pos_hint: {'center': (.5, .5)}
+        do_default_tab: False
+
+        TabbedPanelItem:
+            text: "Tab1"
+            BoxLayout:
+                Label:
+                    text: "Ca c'est le premier tab"
+        
+        TabbedPanelItem:
+            text: "Tab2"
+            BoxLayout:
+                Label:
+                    text: "Ca c'est le deuxieme tab"
