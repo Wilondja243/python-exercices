@@ -1,0 +1,14 @@
+#:kivy 2.3.1
+
+<MySlide>:
+    BoxLayout:
+        orientation: "vertical"
+        Slider:
+            id:slider
+            min: 0
+            max: 100
+            value: 50
+            background_disable_horizontal: 
+
+        Label:
+            text: str(round(slider.value))

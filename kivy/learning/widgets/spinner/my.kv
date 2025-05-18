@@ -1,0 +1,17 @@
+#:kivy 2.3.1
+
+<TestSpinner>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        AnchorLayout:
+            anchor_x: "left"
+            anchor_y: "top"
+
+            Spinner:
+                size_hint: None, None
+                size: 100, 40
+                post_hint: {'center':(.5, .5)}
+                text: 'home'
+                values: 'projects', 'services', 'contact'
+                on_press: print("The spinner {} has text {}".format(self, self.text))
