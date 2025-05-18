@@ -1,35 +1,56 @@
 #:kivy 2.3.1
 
-<MyBg>:
-    GridLayout:
-        canvas.before:
-            AnsyImage:
-                source: "dash.jpg"
-            
-            Rectangle:  
-                pos: self.pos
-                size: self.size
-
 <MyWidget>:
-    GridLayout:
-        size_hint: .9, .9
-        pos_hint: {'center_x': .5, 'center_y': .5}
-        rows: 1
+    StackLayout:
+        orientation: "tb-lr"
 
-        Label:
-            text: "I don't suffer from insanity"
-            text_size: self.width - 20, self.height - 20
-            valign: 'top'
+        GridLayout:
+            cols: 4
+            size_hint: 1, None
+            height: self.minimum_height
 
-        Label:
-            text: "When I was born I was so suprised"
-            text_size: self.width - 20, self.width - 20
-            valign: "middle"
-            halign: "center"
-        
-        Label:
-            text: " A consultant is someone who takes a subjects you understand"
-            text_size: self.width - 20, self.height - 20
-            halign: "justify"
-            valign: "bottom"
+            Button:
+                text: "Bouton A"
+                size_hint: 1, None
+                height: 50
+            
+            Button:
+                text: "Bouton B"
+                size_hint: 1, None
+                height: 50
+
+            Button:
+                text: "Bouton C"
+                size_hint: 1, None
+                height: 50
+
+            Button:
+                text: "Bouton D"
+                size_hint: 1, None
+                height: 50
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, None
+            height: 50
+            pos_hint: {'x': 0, 'y': 1}
+
+            canvas.before:
+                Color:
+                    rgb: 1, .3, .4, .9
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Label:
+                text: "wooooo" if switch.active else ""
+                halign: "left"
+                valign: "middle"
+                text_size: self.size
+
+            Switch:
+                id: switch
+                halign: "right"
+                valign: "middle"
+                size: self.size
 
