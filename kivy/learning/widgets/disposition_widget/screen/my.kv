@@ -1,0 +1,41 @@
+#:kivy 2.3.1
+
+<SettingScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: self.minimum_height
+
+            Button:
+                text:"accueil"
+                on_press: screen_manager.current = "accueil"
+                size_hint: 1, None
+                height: 50
+            
+            Button:
+                text: "parametres"
+                on_press: screen_manager.current = "parametres"
+                size_hint: 1, None
+                height: 50
+            
+
+        ScreenManager:
+            id: screen_manager
+            transition: NoTransition()
+
+            Screen:
+                name: "accueil"
+
+                BoxLayout:
+                    Button:
+                        text: "Contenu du tab nemero 1"
+            
+            Screen:
+                name: "parametres"
+
+                BoxLayout:
+                    Button:
+                        text: "Contenu du tab numero 2"

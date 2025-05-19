@@ -2,17 +2,31 @@
 
 <PannelWidget>:
     orientation: "tb-lr"
+    
+    canvas.before:
+        Color:
+            rgb: 1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
     TabbedPanel:
         size_hint: .5, .5
         pos_hint: {'center': (.5, .5)}
         do_default_tab: False
+        tab_width: self.width / 2
 
         TabbedPanelItem:
             text: "Tab1"
             BoxLayout:
                 Label:
                     text: "Ca c'est le premier tab"
+                TextInput:
+                    multiline: False
+                    on_text_validate: print("Tu as appuyer sur entrer")
+                    cursor_width: 2
+                    background_color: 0,0,0,0
+                    foreground_color: 1,1,1,1
         
         TabbedPanelItem:
             text: "Tab2"
