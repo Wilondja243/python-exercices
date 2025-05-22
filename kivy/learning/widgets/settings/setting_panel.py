@@ -1,7 +1,7 @@
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.settings import SettingsWithSpinner
+from kivy.uix.settings import SettingsWithSpinner, SettingsWithSidebar, SettingsWithNoMenu
 from kivy.uix.button import Button
 
 class MyApp(App):
@@ -45,13 +45,15 @@ class MyApp(App):
     def build_config(self, config):
         config.setdefaults('general', {
             'username': 'Invité',
-            'dark_mode': False
+            'dark_mode': True
         })
 
     # Réagir aux changements dans les paramètres
     def on_config_change(self, config, section, key, value):
         if section == 'general' and key == 'username':
             self.label.text = f"Bonjour, {value}!"
+        elif section == "general" and key == 'dark_mode':
+            print("Dark mode changer")
         print(f"Changement de config : [{section}] {key} = {value}")
 
     # Utiliser SettingsWithSpinner
@@ -61,7 +63,7 @@ class MyApp(App):
     def open_settings(self, *args):
         # Forcer l'utilisation de SettingsWithSpinner
         if not self._app_settings:
-            self.settings_cls = SettingsWithSpinner
+            self.settings_cls = SettingsWithSidebar
         self._open_settings()
 
 if __name__ == '__main__':

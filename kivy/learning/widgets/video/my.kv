@@ -1,7 +1,15 @@
 #:kivy 2.3.1
 
-<VideoWidget>:
+<MyWidget>:
+
     VideoPlayer:
         source: "injectionsql.mp4"
         state: "play"
+        fit_mode: 'contain'
+        eos: 'loop'
+        allow_fullscreen: 'False'
+        position: 0
+    
+    Button:
+        text:"my button"
         
