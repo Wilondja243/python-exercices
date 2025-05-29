@@ -1,0 +1,30 @@
+#:kivy 1.2.0
+
+
+<Theme>:
+    MDScreen:
+        md_bg_color: self.theme_cls.backgroundColor
+
+        MDCard:
+            orientation: "vertical"
+            padding: 0,0,0, "36dp"
+            size_hint: .5, .5
+            style: "outlined"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+
+            MDLabel:
+                text: "Theme style - {}".format(app.theme_cls.theme_style)
+                halign: "center"
+                valign: "center"
+                bold: True
+                font_style: "Display"
+                role: "small"
+
+            MDButton:
+                on_release: app.switch_theme_style()
+                pos_hint: {'center_x': .5}
+                style: 'outlined'
+                
+                MDButtonText:
+                    text: "Set theme"
+        
